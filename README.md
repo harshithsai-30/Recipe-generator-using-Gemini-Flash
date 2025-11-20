@@ -98,8 +98,3 @@ streamlit run app.py
 Created by [Harshith](https://github.com/YOUR_USERNAME) – feel free to reach out!
 
 ```
-
----
-
-Let me know if you want me to generate a `requirements.txt` or `.env` template too.
-```
