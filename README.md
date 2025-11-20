@@ -1,100 +1,211 @@
-# 🍽️ Recipe Generator Using Gemini + Streamlit
+Here is a clean, well-structured **README.md** for your GitHub project.
+It explains features, setup, installation, environment variables, usage, and more.
 
-This Streamlit web app takes a **food image** as input and uses **Gemini (Google Generative AI)** to:
-- Recognize the food
-- Identify ingredients
-- Suggest a recipe with variations based on dietary preferences
+---
+
+# 🧑‍🍳 Recipe Generator (Streamlit + Gemini Vision + PDF Export)
+
+A powerful **AI-based Recipe Generator** built with **Streamlit**, **Google Gemini Vision**, and **ReportLab**.
+This app lets you:
+
+✔️ **Type ingredients** to generate a complete recipe
+✔️ **Upload a food photo** → Gemini Vision identifies the dish + ingredients
+✔️ **Auto-scaled ingredient quantities** (1–45 servings)
+✔️ **Download recipe as PDF**
+✔️ Works for all cuisines & dish types
 
 ---
 
 ## 🚀 Features
 
-- Upload food image (.jpg/.png/.webp)
-- Get recipe suggestions powered by Gemini Pro Vision
-- Fast and simple UI with Streamlit
+### 🔍 1. Generate Recipes From Text
+
+Enter comma-separated ingredients and get:
+
+* Dish name
+* Ingredients list (auto-scaled by servings)
+* Cooking steps
+* Cuisine customization
+
+### 📸 2. Generate Recipes From Image (AI Vision)
+
+Upload a picture of your dish.
+Gemini:
+
+* Identifies the dish
+* Extracts possible ingredients
+* Generates full recipe
+
+### 📄 3. Download as PDF
+
+The entire recipe can be saved offline as a neat PDF using **ReportLab**.
+
+### 🍽 4. Quantity Scaling (Up to 45 Servings!)
+
+Ingredients auto-scale based on real-world estimates.
 
 ---
 
-## 🛠️ Installation Steps
+## 🛠️ Tech Stack
 
-### 1. Clone the Repository
+* **Python 3.10+**
+* **Streamlit** (UI)
+* **Google Gemini API (google-generative-ai)**
+* **Pillow**
+* **ReportLab** (PDF generation)
+* **dotenv** (API key handling)
+
+---
+
+## 📦 Installation
+
+### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/recipe-generator-using-gemini.git
-cd recipe-generator-using-gemini
-````
-
-### 2. Create Virtual Environment (Optional but recommended)
-
-```bash
-python -m venv venv
-# Activate it
-venv\Scripts\activate         # On Windows
-source venv/bin/activate      # On Mac/Linux
+git clone https://github.com/yourusername/recipe-generator.git
+cd recipe-generator
 ```
 
-### 3. Install Dependencies
+### 2️⃣ Install required packages
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Set up Environment Variable
-
-Create a `.env` file in the root directory:
+Or install manually:
 
 ```
-GOOGLE_API_KEY=your_google_api_key_here
+streamlit
+pillow
+python-dotenv
+google-generativeai
+reportlab
 ```
-
-You can get your API key from: [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey)
 
 ---
 
-## 🧪 Run the App
+## 🔑 Setup Google Gemini API Key
+
+### Step 1: Visit
+
+👉 [https://aistudio.google.com](https://aistudio.google.com)
+Login → Go to **API Keys**
+
+### Step 2: Create a new key
+
+Click **Create API Key** → Copy
+
+### Step 3: Add key to `.env` file
+
+Create a file named:
+
+```
+.env
+```
+
+Put this inside:
+
+```
+GOOGLE_API_KEY=YOUR_API_KEY_HERE
+```
+
+---
+
+## ▶️ Run the App
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 📁 File Structure
+The app will open in your browser at:
 
 ```
-├── app.py                  # Main Streamlit app
-├── .env                    # Your Google API key (not shared)
-├── requirements.txt        # All Python dependencies
-└── README.md               # Project guide and documentation
+http://localhost:8501
 ```
 
 ---
 
-## ✨ Demo
+## 📷 Example Flow (Image → Recipe)
 
-![image](https://github.com/user-attachments/assets/5c90187a-6862-4075-8ca4-f1c8dbd6290a)
-![image](https://github.com/user-attachments/assets/f2b051e5-9b71-4e53-9ed9-cf7291b04828)
-
-
----
-
-## 📌 Notes
-
-* This uses **Gemini 1.5 Flash** model from `google-generativeai`.
-* Make sure your API key has access to `generativeLanguage` and `multimodal` features.
+1. Upload a food image
+2. Gemini Vision detects dish (e.g., *Masala Potatoes*)
+3. Ingredients auto-generated
+4. Ingredients scale if you choose more servings
+5. Steps generated automatically
+6. Download the PDF
 
 ---
 
-## 💡 Future Ideas
+## 📄 PDF Output Includes:
 
-* Add support for multiple dish detection
-* Dietary customization (vegan/keto filters)
-* Recipe saving & download feature
+* Recipe title
+* Cuisine & meal type
+* Ingredients (auto-scaled)
+* Steps
+* Clean readable formatting
 
 ---
 
-## 📬 Contact
-
-Created by [Harshith](https://github.com/YOUR_USERNAME) – feel free to reach out!
+## 📁 Project Structure
 
 ```
+recipe-generator/
+│── app.py
+│── requirements.txt
+│── README.md
+│── .env (you create)
+│── /images (optional)
+```
+
+---
+
+## 🧪 Troubleshooting
+
+### ❌ INVALID API KEY
+
+If you see:
+
+```
+InvalidArgument: API key not valid
+```
+
+Check:
+✔ API key copied correctly
+✔ .env file created
+✔ Restart terminal after adding .env
+✔ `GOOGLE_API_KEY` is NOT expired
+✔ Billing is optional but available
+
+### ❌ “Unable to process input image”
+
+Make sure:
+
+* Upload only `jpg/png`
+* Image size not corrupted
+* Try another image
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+You can enhance the app with:
+
+* More advanced ingredient scaling
+* More cuisines
+* UI themes
+* Storage / recipe history
+
+---
+
+## 📜 License
+
+This project is open-source under the **MIT License**.
+
+---
+
+If you want, I can:
+✅ Add screenshots to README
+✅ Generate `requirements.txt`
+✅ Create GitHub project description
+Just tell me!
