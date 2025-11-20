@@ -95,7 +95,7 @@ streamlit run app.py
 
 ## 📬 Contact
 
-Created by [Your Name](https://github.com/YOUR_USERNAME) – feel free to reach out!
+Created by [Harshith](https://github.com/YOUR_USERNAME) – feel free to reach out!
 
 ```
 
